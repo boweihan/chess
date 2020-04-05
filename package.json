@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-images": "cp img/chesspieces/wikipedia/* dist/img/chesspieces/wikipedia/",
     "dev": "parcel index.html",
     "build": "parcel build index.html"
   },
@@ -20,7 +21,9 @@
   "homepage": "https://github.com/boweihan/chess#readme",
   "dependencies": {
     "@chrisoakman/chessboardjs": "^1.0.0",
-    "chess.js": "^0.10.3"
+    "chess.js": "^0.10.3",
+    "chessboardjs": "0.0.1",
+    "img": "^3.0.3"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
