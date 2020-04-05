@@ -1,9 +1,9 @@
-import { Chess } from "chess.js";
-import Chessboard from "chessboardjs";
-import "chessboardjs/www/releases/0.3.0/css/chessboard-0.3.0.min.css";
+import { Chess } from 'chess.js';
+import Chessboard from 'chessboardjs';
+import 'chessboardjs/www/releases/0.3.0/css/chessboard-0.3.0.min.css';
 
-var board = null;
-var game = new Chess();
+let board = null;
+const game = new Chess();
 
 function onDragStart(source, piece, position, orientation) {
   // do not pick up pieces if the game is over
@@ -14,26 +14,26 @@ function onDragStart(source, piece, position, orientation) {
 }
 
 function makeRandomMove() {
-  var possibleMoves = game.moves();
+  const possibleMoves = game.moves();
 
   // game over
   if (possibleMoves.length === 0) return;
 
-  var randomIdx = Math.floor(Math.random() * possibleMoves.length);
+  const randomIdx = Math.floor(Math.random() * possibleMoves.length);
   game.move(possibleMoves[randomIdx]);
   board.position(game.fen());
 }
 
 function onDrop(source, target) {
   // see if the move is legal
-  var move = game.move({
+  const move = game.move({
     from: source,
     to: target,
-    promotion: "q" // NOTE: always promote to a queen for example simplicity
+    promotion: 'q', // NOTE: always promote to a queen for example simplicity
   });
 
   // illegal move
-  if (move === null) return "snapback";
+  if (move === null) return 'snapback';
 
   // make random legal move for black
   window.setTimeout(makeRandomMove, 250);
@@ -45,12 +45,12 @@ function onSnapEnd() {
   board.position(game.fen());
 }
 
-var config = {
+const config = {
   draggable: true,
-  position: "start",
+  position: 'start',
   onDragStart: onDragStart,
   onDrop: onDrop,
-  onSnapEnd: onSnapEnd
+  onSnapEnd: onSnapEnd,
 };
 
-board = Chessboard("board", config);
+board = Chessboard('board', config);
