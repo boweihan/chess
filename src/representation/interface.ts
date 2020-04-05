@@ -121,3 +121,5 @@ interface Representation {
    */
   move: Function;
 }
+
+export default Representation;
