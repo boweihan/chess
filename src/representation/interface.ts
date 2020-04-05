@@ -1,13 +1,18 @@
-interface Representation {
+export interface Representation {
+  /*
+   * Private state
+   */
+  board?: any;
+
   /*
    * @returns the ascii representation of the board
    */
-  ascii: Function;
+  ascii: string;
 
   /*
    * @returns a jagged array representing the board
    */
-  board: Function;
+  getBoard: Function;
 
   /*
    * clear and reset the board state
@@ -119,7 +124,7 @@ interface Representation {
    * Undo the last half-move
    * @returns the move object if successful, otherwise null
    */
-  move: Function;
+  undo: Function;
 }
 
 export default Representation;

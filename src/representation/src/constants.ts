@@ -1,16 +1,26 @@
 enum Sides {
-  BLACK = 'b',
-  WHITE = 'w',
+  BLACK = 'black',
+  WHITE = 'white',
 }
 
 enum Pieces {
-  EMPTY = '0',
-  PAWN = 'p',
-  KNIGHT = 'n',
-  BISHOP = 'b',
-  ROOK = 'r',
-  QUEEN = 'q',
-  KING = 'k',
+  EMPTY = 'empty',
+  PAWN = 'pawn',
+  KNIGHT = 'knight',
+  BISHOP = 'bishop',
+  ROOK = 'rook',
+  QUEEN = 'queen',
+  KING = 'king',
+}
+
+enum PieceValues {
+  'empty' = 0,
+  'pawn' = 100,
+  'knight' = 325,
+  'bishop' = 325,
+  'rook' = 550,
+  'queen' = 1000,
+  'king' = 50000,
 }
 
 enum Ranks {
@@ -55,6 +65,13 @@ enum Squares {
   OFFBOARD = 100,
 }
 
+enum CastleBit {
+  WHITE_KING_SIDE = 1, // 0001
+  WHITE_QUEEN_SIDE = 2, // 0010
+  BLACK_KING_SIDE = 4, // 0100
+  BLACK_QUEEN_SIDE = 8, // 1100
+}
+
 // prettier-ignore
 const FilesBoard =
   [100,100,100,100,100,100,100,100,100,100
@@ -90,10 +107,12 @@ const BoardSquareNumber = 120;
 export {
   Sides,
   Pieces,
+  PieceValues,
   Ranks,
   Files,
   Squares,
-  BoardSquareNumber,
+  CastleBit,
   FilesBoard,
   RanksBoard,
+  BoardSquareNumber,
 };
