@@ -1,9 +1,9 @@
-enum Sides {
+enum Side {
   BLACK = 'black',
   WHITE = 'white',
 }
 
-enum Pieces {
+enum Piece {
   EMPTY = 'empty',
   PAWN = 'pawn',
   KNIGHT = 'knight',
@@ -105,8 +105,8 @@ const RanksBoard =
 const BoardSquareNumber = 120;
 
 export {
-  Sides,
-  Pieces,
+  Side,
+  Piece,
   PieceValues,
   Ranks,
   Files,

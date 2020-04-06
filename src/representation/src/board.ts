@@ -1,8 +1,9 @@
-import { Sides, BoardSquareNumber } from './constants';
+import { Side, BoardSquareNumber } from './constants';
+import type { Board } from '../types';
 
-const initBoard = () => ({
+const initBoard = (): Board => ({
   pieces: new Array(BoardSquareNumber), // pieces
-  side: Sides.WHITE, // current side
+  side: Side.WHITE, // current side
   fiftyMove: 0, // count before fifty move draw
   hisPly: 0, // count of half moves
   ply: 0, // number of half moves played in the search tree
